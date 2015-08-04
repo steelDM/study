@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
+//bind actions
+
 router.get('/u/:user', function(req, res) {
   res.send('respond with a resource');
 });

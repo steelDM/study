@@ -2,7 +2,9 @@ var http = require('http');
 var path = require('path');
 var fs = require('fs');
 var url = require('url');
-var querystring = require('querystring');
+var session = require('./session');
+
+console.log(session);
 
  
 
@@ -69,10 +71,7 @@ var handlers = {
 http.createServer(function(req, res){
 
 	var paths = url.parse(req.url).pathname.split('/');
-	var query = url.parse(req.url).query;
-
-	console.log(querystring.parse(req.headers.cookie));
-
+	var query = url.parse(req.url,true).query; //return {a:b}
 
 	var controller = paths[1] || index;
 	//错误1:路径拼写不对

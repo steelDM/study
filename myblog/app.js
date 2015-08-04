@@ -8,27 +8,34 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials')
-
+var SS = require('./models/session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
-console.log(app);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //访问中间件
+
 app.use(logger('dev'));
 app.use(partials());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+//解析cookies，并挂载到req上，req.cookies
+app.use(cookieParser('mengmeng'));
+//简易session
+app.use(SS);
+
 //指定根目录
 app.use(express.static(path.join(__dirname, 'public')));
 
+//绑定需要的controller
 app.use('/', routes);
 app.use('/users', users);
 
