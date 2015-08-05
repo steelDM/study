@@ -32,6 +32,8 @@ app.use(cookieParser('mengmeng'));
 //简易session
 app.use(SS);
 
+//先去以静态文件解析，没有再以路由解析，还没有返回404
+
 //指定根目录
 app.use(express.static(path.join(__dirname, 'public')));
 
