@@ -1,6 +1,5 @@
 
 //这些中间件只有在起服务的时候才会用到
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
