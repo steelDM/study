@@ -15,14 +15,16 @@ var createrChild = function(){
 	child.on('exit', function(){
 		console.log('Worker' + child.pid + 'exited');
 		delete childs[child.pid];
-		createrChild()
+		//createrChild()
 	});
 	child.on('message',function(message){
-		//if()
-
+		console.log('suicide');
+		if(message.act == 'suicide'){
+			createrChild();
+		}
 	});
 	child.send('server', server);
-	console.log('master pid:',process.pid);
+	//console.log('master pid:',process.pid);
 	childs[child.pid] = child;
 	console.log('Create worker pid:',child.pid);
 }

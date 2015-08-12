@@ -1,8 +1,13 @@
 var http = require('http');
+var url = require('url');
 var server = http.createServer(function(req,res){
 	res.writeHead(200,{'Content-Type':'text/plain'});
 	res.end('handle by child, pid is'+ process.pid +'\n');
-})
+	//console.log(url.parse(req.url).pathname);
+	if(url.parse(req.url).pathname !== '/favicon.ico'){
+		throw new Error('throw exception');	
+	}
+});
 
 
 //m is messageName
@@ -21,7 +26,7 @@ process.on('message',function(m, tcp){
 //代码错误导致进程退出
 process.on('uncaughtException',function(){
 	process.send({act:'suicide'});
-	//断开已有链接后，退出进程
+	//断开所有有链接后，退出进程
 	worker.close(function(){
 		process.exit(1);
 	});
