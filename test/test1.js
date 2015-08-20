@@ -4,7 +4,7 @@ var fs = require('fs');
 var url = require('url');
 var session = require('./session');
 
-console.log(session);
+//console.log(session);
 
  
 
