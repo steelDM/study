@@ -1,0 +1,11 @@
+[2015-08-13 13:33:06.443] [ERROR] app - [Error: throw exception]
+Error: throw exception
+    at Server.<anonymous> (E:\project\process\child.js:19:9)
+    at Server.emit (events.js:110:17)
+    at HTTPParser.parserOnIncoming [as onIncoming] (_http_server.js:491:12)
+    at HTTPParser.parserOnHeadersComplete (_http_common.js:111:23)
+    at Socket.socketOnData (_http_server.js:343:22)
+    at Socket.emit (events.js:107:17)
+    at readableAddChunk (_stream_readable.js:163:16)
+    at Socket.Readable.push (_stream_readable.js:126:10)
+    at TCP.onread (net.js:538:20)
