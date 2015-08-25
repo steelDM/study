@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./angular.js"></script>
+	<script src="http://cdn.bootcss.com/angular.js/1.2.0/angular.min.js"></script>
+	<style type="text/css">
+		.text-warning{
+			color:red;
+		}
+	</style>
+</head>
+<body ng-app>
+ 	<div class="container" ng-controller = "limitCtrl">
+ 		<span ng-class="{'text-warning':shouldWarn()}">sddsd</span>
+ 		<span>Remaining:{{remaining()}}</span>
+ 		<div class="row">
+ 			<textarea ng-model="message">{{message}}</textarea>
+ 		</div>
+ 		<div class="row">
+ 			<!--ng-diasbled true是不可用，false可用-->
+ 			<button ng-disabled="!hasValidLength()" ng-click="send()">send</button>	
+ 			<button ng-click="clear()">clear</button>
+ 		</div>
+ 	 </div>	
+
+</body>
+</html>
