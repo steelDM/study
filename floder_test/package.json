@@ -1,0 +1,15 @@
+{
+  "name": "floder_m",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+"install": "whatever_modules theseAreMy_modules",	
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "whatever_modules": "^0.1.1"
+  }
+}
