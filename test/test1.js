@@ -1,4 +1,3 @@
-var abc = "10";
 
 
 var http = require('http'),
@@ -8,7 +7,7 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 var path = require('path');
 var url  = require('url');
-var express = require('express');
+//var express = require('express');
 var pathToRegexp = require('path-to-regexp')
 // Create your proxy server and set the target in the options.
 
@@ -105,6 +104,8 @@ app.use('/', function fooMiddleware(req, res, next) {
 
 http.createServer(app).listen(8080);
 
-
+exports = {
+	a:'abc'
+}
 //httpProxy.createProxyServer({target:'http://127.0.0.1:9033'}).listen(8080);
 
