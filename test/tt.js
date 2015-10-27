@@ -46,7 +46,7 @@ function commit(){
 function push(){
 	var deferred = Q.defer();
 
-	myRepo.push('local', 'master',function(err, result) {
+	myRepo.push('origin', 'master',function(err, result) {
 
 		console.log('push 完毕');
     	
